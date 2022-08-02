@@ -1,0 +1,1 @@
+activeMq：消息生产者，consumer属于内测基于内存的jms
