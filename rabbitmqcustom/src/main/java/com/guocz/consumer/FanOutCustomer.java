@@ -1,4 +1,4 @@
-package com.guocz.custom;
+package com.guocz.consumer;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

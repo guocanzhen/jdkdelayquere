@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DirectRabbitConfig {
 
-    @Bean
+    @Bean(name = "TestDirectQueue")
     public Queue queue() {
 
         // durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效
@@ -43,10 +43,23 @@ public class DirectRabbitConfig {
     }
 
 
-
     @Bean
-    public DirectExchange lonelyDirectExchange() {
-        return new DirectExchange("lonelyDirectExchange");
+    public DirectExchange onlyDirectExchange() {
+        return new DirectExchange("onlyDirectExchange");
     }
 
+    @Bean
+    public Queue queueCustomAck() {
+        return new Queue("queue.customAck", true);
+    }
+
+    @Bean
+    public DirectExchange exchangeCustomAck() {
+        return new DirectExchange("exchangeCustomAck", true, false);
+    }
+
+    @Bean
+    public Binding bindingCustomAck() {
+        return BindingBuilder.bind(queueCustomAck()).to(exchangeCustomAck()).with("customAckRouting");
+    }
 }

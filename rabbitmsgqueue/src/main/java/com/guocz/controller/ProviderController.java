@@ -46,7 +46,6 @@ public class ProviderController {
 
     /**
      * 主题
-     * @param msg
      */
     @GetMapping("topic1")
     public void sendTopic1() {
@@ -63,7 +62,6 @@ public class ProviderController {
 
     /**
      * 主题
-     * @param msg
      */
     @GetMapping("topic2")
     public void sendTopic2() {
@@ -110,6 +108,9 @@ public class ProviderController {
         log.info("fanOutB消息已发送：{}", map.toString());
     }
 
+    /**
+     * 扇形
+     */
     @GetMapping("fanOutC")
     public void sendFanOutC() {
         String msgId = String.valueOf(UUID.randomUUID());
