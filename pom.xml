@@ -21,6 +21,8 @@
         <module>activemqcustom</module>
         <module>rabbitmsgqueue</module>
         <module>rabbitmqcustom</module>
+        <module>rocketmsgqueue</module>
+        <module>rocketmqcustom</module>
     </modules>
 
     <properties>
@@ -58,6 +60,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+<!--        rocketMq-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
     </dependencies>
 
